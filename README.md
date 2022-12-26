@@ -1,7 +1,7 @@
 # AES plus plus
 <a name="how-to-use"></a>
 ## How to use?
-```
+```c++
 #include "aespp_encrypt.cpp"
 #include "aespp_decrypt.cpp"
 #include <iostream>
@@ -85,14 +85,14 @@ Print section
 <a name="ECB-mode"></a>
 ## ECB encryption and decryption (Electronic Code Book)
 You can select the encryption mode with the enum class named aesMode
-```
+```c++
 enum class aesMode {
     AES_ECB = 0,
     AES_CBC = 1
 }; // The aesMode enum is defined in aespp.hpp
 ```
 Example of how to use ECB encryption mode using the function aespp::encrypt(...) or aespp::decrypt(...)
-```
+```c++
 ...
 std::size_t cipherSize = aespp::encrypt(plaintext, plaintextLength, key, NULL, &output, aespp::aesRounds::AES_128, aespp::aesMode::AES_ECB); // Encryption using ECB mode
 
@@ -102,7 +102,7 @@ std::size_t messageSize = aespp::decrypt(plaintext, plaintextLength, key, NULL, 
 <a name="CBC-mode"></a>
 ## CBC encryption and decryption (Cipher Block Chaining)
 You can select the encryption mode with the enum class named aesMode
-```
+```c++
 enum class aesMode {
     AES_ECB = 0,
     AES_CBC = 1
@@ -113,7 +113,7 @@ Example of how to use CBC encryption mode using the function aespp::encrypt(...)
 
 **For the CBC encryption mode is needed a initialization vector (IV) as the fourth parameter, if it isn't provided it will throw an exception.
 The initialization vector is a unsigned char array of 16 bits.**
-```
+```c++
 ...
 unsigned char iv = charToUnsignedChar("0123456789abcdef"); // Example of IV
 
@@ -126,7 +126,7 @@ std::size_t messageSize = aespp::decrypt(output, cipherSize, key, iv, &decipher,
 <a name="AES-128"></a>
 ### AES 128
 You can select the number of rounds using the enum class named aesRounds.
-```
+```c++
 enum class aesRounds {
     AES_128 = 10,
     AES_192 = 12,
@@ -138,7 +138,7 @@ AES 128 requires a unsigned char array of 16 bits as the third parameter of the 
 <a name="AES-192"></a>
 ### AES 192
 You can select the number of rounds using the enum class named aesRounds.
-```
+```c++
 enum class aesRounds {
     AES_128 = 10,
     AES_192 = 12,
@@ -150,7 +150,7 @@ AES 192 requires a unsigned char array of 24 bits as the third parameter of the 
 <a name="AES-256"></a>
 ### AES 256
 You can select the number of rounds using the enum class named aesRounds.
-```
+```c++
 enum class aesRounds {
     AES_128 = 10,
     AES_192 = 12,
@@ -192,6 +192,6 @@ Parameters:
 2. Length: The length of the array or the length of characters to print
 
 Example:
-```
+```c++
 printHex(message, messageLength);
 ```
