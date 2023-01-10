@@ -43,6 +43,8 @@ Print section
 	
 	result = aespp::unsignedCharToChar(decipher, decryptSize); // This function casts unsigned char to char
 	std::cout << result;
+	
+	...
 }
 ```
 ## Documentation
