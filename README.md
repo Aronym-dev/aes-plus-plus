@@ -8,12 +8,12 @@
 	
 int main()
 {
-	unsigned char *txt,  *key, *iv, *cipher = NULL, *decipher;
+	unsigned char *txt,  *key, *iv, *cipher = NULL, *decipher = NULL;
 	char *result;
 	
 	std::string msg = "Example message";
 	std::string password = "0123456789abcdefgexamplepassword";
-	char* initializerVector = "0123456789abcdef";
+	char *initializerVector = "0123456789abcdef";
 	
 	txt = aespp::charToUnsignedChar(msg); // This function casts std::string to unsigned char
 	key = aespp::charToUnsignedChar(password);
@@ -42,7 +42,7 @@ Print section
 	aespp::printHex(decipher, decryptSize);
 	
 	result = aespp::unsignedCharToChar(decipher, decryptSize); // This function casts unsigned char to char
-	std::cout << result;
+	std::cout << result << "\n";
 	
 	...
 }
