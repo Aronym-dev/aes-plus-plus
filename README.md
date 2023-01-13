@@ -2,8 +2,7 @@
 <a name="how-to-use"></a>
 ## How to use?
 ```c++
-#include "aespp_encrypt.cpp"
-#include "aespp_decrypt.cpp"
+#include "aespp.hpp"
 #include <iostream>
 	
 int main()
